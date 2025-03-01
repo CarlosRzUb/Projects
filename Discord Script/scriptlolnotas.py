@@ -8,10 +8,10 @@ script_directory = os.path.dirname(os.path.abspath(__file__))
 ruta_archivo = os.path.join(script_directory, 'ultimafecha.txt')
 
 # Tu clave de API (necesaria para obtener las versiones desde la API de Data Dragon)
-api_key = 'RGAPI-991faad4-a205-481f-8a6e-e5990aac8e90'
+api_key = 'your_api_key'
 
 # Enlace del webhook de Discord
-webhook_url = 'https://discord.com/api/webhooks/1175075842775318649/sQ5TwJJ16k9vr7IzDJqBT95eKZVH1NnnDIjzVoq_MBNdALQgQ0pILUFbWYue6iVwX1UD'
+webhook_url = 'your_webhook_link'
 
 def obtener_ultima_version(api_key):
     # Obtener la lista de versiones disponibles desde la API de Data Dragon

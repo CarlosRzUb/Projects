@@ -8,10 +8,10 @@ script_directory = os.path.dirname(os.path.abspath(__file__))
 ruta_archivo = os.path.join(script_directory, 'ultimafecha.txt')
 
 # Tu clave de API (necesaria para obtener las versiones desde la API de Data Dragon)
-api_key = 'RGAPI-991faad4-a205-481f-8a6e-e5990aac8e90'
+api_key = 'your-api-key'
 
 # Enlace del webhook de Discord
-webhook_url = 'https://discord.com/api/webhooks/1175075842775318649/sQ5TwJJ16k9vr7IzDJqBT95eKZVH1NnnDIjzVoq_MBNdALQgQ0pILUFbWYue6iVwX1UD'
+webhook_url = 'your-discord-webhook-link'
 
 def obtener_ultima_version(api_key):
     # Obtener la lista de versiones disponibles desde la API de Data Dragon
@@ -66,18 +66,18 @@ def enviar_mensaje_discord(webhook_url, version_actual):
 
 if __name__ == "__main__":
     try:
-       # Obtener la última versión desde la API de Data Dragon
-       version_actual = obtener_ultima_version(api_key)
+        # Obtener la última versión desde la API de Data Dragon
+        version_actual = obtener_ultima_version(api_key)
 
-       # Verificar si la versión es válida
-       if version_actual:
-       	   print(f'Nueva versión detectada: {version_actual}')
+        # Verificar si la versión es válida
+        if version_actual:
+            print(f'Nueva versión detectada: {version_actual}')
 
-           # Enviar el mensaje a Discord con el botón y detalles adicionales
-           enviar_mensaje_discord(webhook_url, version_actual)
+            # Enviar el mensaje a Discord con el botón y detalles adicionales
+            enviar_mensaje_discord(webhook_url, version_actual)
 
-           # Actualizar la fecha del último envío
-           actualizar_fecha_ultimo_envio(fecha_actual)
+            # Actualizar la fecha del último envío
+            actualizar_fecha_ultimo_envio(fecha_actual)
 
     except Exception as e:
         print(f'Error inesperado: {str(e)}')
